@@ -1,0 +1,10 @@
+import pandas as pd
+e_data =pd.read_excel('非洲通讯产品销售数据.xlsx',0)
+df=e_data.groupby(["国家","服务分类"])["销售额"].sum().reset_index()
+df.to_excel("1_2_1.xlsx",index=False)
+df=e_data.groupby(["地区","服务分类"])["销售额"].sum().reset_index()
+df.to_excel("1_2_2.xlsx",index=False)
+df=e_data.groupby(["国家","服务分类"])["利润"].sum().reset_index()
+df.to_excel("1_2_3.xlsx",index=False)
+df=e_data.groupby(["地区","服务分类"])["利润"].sum().reset_index()
+df.to_excel("1_2_4.xlsx",index=False)
